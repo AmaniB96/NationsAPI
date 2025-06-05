@@ -15,6 +15,8 @@ export default function SearchBar({onSearch, onTri}) {
         onSearch(search)
     }
 
+    
+
 
     return(
         <>
