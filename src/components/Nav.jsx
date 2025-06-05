@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import './nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-  import { faGlobe, faCamera,faStar } from '@fortawesome/free-solid-svg-icons';  
+  import { faGlobe,faStar } from '@fortawesome/free-solid-svg-icons';  
 export default function Nav() {
   const location = useLocation();
 
