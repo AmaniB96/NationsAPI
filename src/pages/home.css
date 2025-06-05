@@ -1,0 +1,43 @@
+.card-container {
+  display: flex;
+  flex-direction: column; /* or column, depending on your preference */
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  transition: transform 0.3s ease; /* Adds a smooth transition for hover effect */
+  width: 300px;
+}
+
+.card-container:hover {
+  transform: translateY(-5px); /* Lifts the card slightly on hover */
+}
+
+.flag {
+  width: 100%; /* Adjust as needed */
+}
+
+.flag img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.infos {
+  padding: 20px;
+}
+
+.infos h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.infos p {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.infos b {
+  font-weight: bold;
+}
