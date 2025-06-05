@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import './nav.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+  import { faUser, faCamera } from '@fortawesome/free-solid-svg-icons';  
 export default function Nav() {
   const location = useLocation();
 
@@ -21,7 +22,7 @@ export default function Nav() {
       </ul>
 
       <div className="dark-btn">
-        <button className="darkmode">Dark</button>
+        <button className="darkmode">{faCamera}</button>
       </div>
     </div>
   );
