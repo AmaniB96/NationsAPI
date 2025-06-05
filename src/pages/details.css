@@ -1,0 +1,72 @@
+.details-container {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 2rem;
+    color: white;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.country-details {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.country-details h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-section h3 {
+    color: #FFD43B;
+    margin-bottom: 0.5rem;
+}
+
+.info-section p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .country-details h1 {
+        font-size: 2rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}

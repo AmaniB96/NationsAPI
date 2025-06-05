@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import './details.css';
 import axios from "axios";
 
@@ -18,26 +18,46 @@ export default function Details() {
     return (
         <>
             {country ? ( 
-                <div className="details-container">
-                    <h1>{country.name.common}</h1>
-                    <div className="product-details-grid">
-                        <div className="product-image-section">
-                            <img src={country.flags.svg} />
-                        </div>
-                        <div className="product-info-section">
-                            {/* <p className="product-category">Category: {country.category}</p>
-                            <p className="product-description-details">{country.description}</p>
-                            <p className="product-price-details">Price: ${country.price}</p>
-                            {country.rating && (
-                                <p className="product-rating-details">
-                                    Rating: {country.rating.rate} ({country.rating.count} reviews)
+                <div 
+                    className="details-container"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${country.flags.svg})`,
+                    }}
+                >
+                    <Link to="/" className="back-button">← Back</Link>
+                    <div className="country-details">
+                        <h1>{country.name.common}</h1>
+                        <div className="info-grid">
+                            <div className="info-section">
+                                <h3>Official Name</h3>
+                                <p>{country.name.official}</p>
+
+                                <h3>Capital</h3>
+                                <p>{country.capital}</p>
+
+                                <h3>Region</h3>
+                                <p>{country.region} ({country.subregion})</p>
+                            </div>
+
+                            <div className="info-section">
+                                <h3>Population</h3>
+                                <p>{country.population.toLocaleString()}</p>
+
+                                <h3>Languages</h3>
+                                <p>{Object.values(country.languages || {}).join(', ')}</p>
+
+                                <h3>Currencies</h3>
+                                <p>
+                                    {Object.values(country.currencies || {})
+                                        .map(curr => `${curr.name} (${curr.symbol})`)
+                                        .join(', ')}
                                 </p>
-                            )} */}
+                            </div>
                         </div>
                     </div>
                 </div>
             ) : (
-                <div>Loading product details...</div>
+                <div className="loading">Loading country details...</div>
             )}
         </>
     );
