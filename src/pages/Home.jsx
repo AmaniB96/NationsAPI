@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './home.css'
 import axios from 'axios'
 import SearchBar from '../components/searchBar'
+import { NavLink } from 'react-router-dom'
 
 export default function Home() {
     
@@ -35,24 +36,27 @@ export default function Home() {
 
     return(
         <>
-        <SearchBar onTri={triFunction} onSearch={handleSearch}/>
+            <SearchBar onTri={triFunction} onSearch={handleSearch}/>
 
-        <div className='container'>
-         {filteredData && filteredData.map((item, index) => (      
-            
-                <div className='card-container' key={index}>
-                    <div className='flag'>
-                        <img src={item.flags.svg}></img>
-                    </div>
-                    <div className='infos'>
-                        <h3>{item.name.common}</h3>
-                        <p> <b>Population</b>: {item.population} </p>
-                        <p> <b>Region</b>: {item.region}</p>
-                        <p> <b>Capital</b>: {item.capital}</p>
-                    </div>
-                </div>  
-         ))}
-         </div>
+            <div className='container'>
+                {filteredData && filteredData.map((item, index) => (      
+                    <NavLink key={index} to={`/country/${index}`}>
+                        <div className="product-card">
+                            <div className='card-container'>
+                                <div className='flag'>
+                                    <img src={item.flags.svg} alt={`Flag of ${item.name.common}`}/>
+                                </div>
+                                <div className='infos'>
+                                    <h3>{item.name.common}</h3>
+                                    <p><b>Population</b>: {item.population}</p>
+                                    <p><b>Region</b>: {item.region}</p>
+                                    <p><b>Capital</b>: {item.capital}</p>
+                                </div>
+                            </div>
+                        </div>  
+                    </NavLink>
+                ))}
+            </div>
         </>
     )
 }
