@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export default function Home() {
     
-    const [data, setData] = useState([])
+    const [data, setData] = useState(null)
 
     useEffect(() => {
         axios.get("https://restcountries.com/v3.1/all")
@@ -14,11 +14,11 @@ export default function Home() {
 
     return(
         <>
-         {data.map((item, index) => {
+         {data && data.map((item, index) => (            
             <div key={index}>
-                <img src={item[index].flags.png}></img>
+                <img src={item.flags.png}></img>
             </div>
-         })}
+         ))}
         </>
     )
 }
