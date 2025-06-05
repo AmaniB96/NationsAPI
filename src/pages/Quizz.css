@@ -1,0 +1,88 @@
+.contain-qzz {
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/bg-quizz.png"); /* optionnel */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.quiz-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.quiz-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #FFD43B;
+}
+
+.poke-img {
+  width: 180px;
+  height: auto;
+  border: 3px solid #FFD43B;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.poke-img.reveal {
+  transform: scale(1.1);
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.choices button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #FFD43B;
+  border-radius: 8px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.choices button:hover {
+  background-color: #FFD43B;
+  color: black;
+}
+
+.replay-btn {
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: #FFD43B;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.replay-btn:hover {
+  background-color: #e6c122;
+}

@@ -1,56 +1,73 @@
+/* Style général de la nav */
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 30px;
   position: relative;
   background-color: bisque;
-  color: white;
-  border: 3px solid;
+  color: #333;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
-.nav img {
-  width: 70px;
-  height: 70px;
-  margin-right: 20px;
+/* Logo (icône globe) */
+.logo h3 {
+  font-size: 32px;
+  margin: 0;
 }
 
+/* Ligne horizontale décorative */
 .ligne {
   height: 2px;
-  width: 40vw;
+  width: 80vw;
   background-color: black;
   position: absolute;
   left: 100px;
+  bottom: 0;
   z-index: 1;
 }
 
+/* Navigation */
 .navig {
-  backdrop-filter: blur(20px);
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px 60px;
-  display: flex;
-  align-items: center;
-  list-style: none;
-  z-index: 2;
-  gap: 30px;
-}
-
-.navig ul {
-  list-style: none;
   list-style: none;
   display: flex;
   gap: 40px;
   margin: 0;
   padding: 0;
-}
-.darkmode{
-    width: 50px;
-    background-color: black;
-    border-radius: 40px;
-}
-.navig li a {
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 2px;
+  z-index: 2;
 }
 
+.navig li a {
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.navig li a:hover {
+  color: #FFD43B;
+}
+
+
+/* Bouton dark mode */
+.dark-btn {
+  margin-left: 20px;
+}
+
+.darkmode {
+  background-color: transparent;
+  border: 2px solid #FFD43B;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.darkmode:hover {
+  background-color: #FFD43B;
+  color: black;
+  
+}
