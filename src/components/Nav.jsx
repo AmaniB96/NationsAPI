@@ -7,10 +7,11 @@ export default function Nav() {
   return (
     <div className="nav">
       <div className="logo">
-        <h3>Where in the world ?</h3>
+        <h3>Visite your world ?</h3>
       </div>
+      <div className="ligne"></div>
 
-      <ul className="nav-links">
+      <ul className="navig">
         <li className={location.pathname === '/' ? 'active' : ''}>
           <Link to="/">Home</Link>
         </li>

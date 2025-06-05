@@ -1,7 +1,7 @@
 .nav {
     height: 70px;
     width: 100%;
-    background-color: rgba(167, 160, 160, 0.775);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -11,6 +11,43 @@
   color: inherit;
   font-weight: bold;
 }
-.nav-links li.active a {
-  border-bottom: 2px solid black; /* ou une autre couleur */
+.nav-links li {
+      text-decoration: none;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  position: relative;
+  background-color: bisque;
+  color: white;
+  border: 3px solid;
+}
+
+.navig {
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.navig li a {
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.dark-btn{
+    width: 70px;
+}
+.dark-btn button{
+    
+    border-radius: 100%;
 }
