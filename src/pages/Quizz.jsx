@@ -69,18 +69,25 @@ function Quizz() {
   if (!currentCountry) return <p>Chargement...</p>;
 
   return (
-    <div className="contain-qzz">
-      <div className="flex">
+    <div 
+      className="quiz-background"
+      style={{
+        backgroundImage: currentCountry ? 
+          `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${currentCountry.flags.svg})` : 
+          'none'
+      }}
+    >
+      <div className="quiz-content">
         <div className="quiz-container">
           <h2>Quel est ce pays ?</h2>
           <img
             src={currentCountry.flags.png}
             alt="drapeau"
-            className={`poke-img ${reveal ? 'reveal' : ''}`}
+            className={`quiz-flag ${reveal ? 'reveal' : ''}`}
           />
 
           {!gameOver ? (
-            <>
+            <div className="quiz-active">
               <div className="choices">
                 {options.map((opt, idx) => (
                   <button key={idx} onClick={() => handleChoice(opt)}>
@@ -88,14 +95,14 @@ function Quizz() {
                   </button>
                 ))}
               </div>
-              <p>Score : {score}</p>
-            </>
+              <p className="score">Score : {score}</p>
+            </div>
           ) : (
-            <>
+            <div className="quiz-over">
               <p>Raté ! C'était : {currentCountry.name.common}</p>
               <p>Score final : {score}</p>
               <button className="replay-btn" onClick={handleReplay}>Rejouer</button>
-            </>
+            </div>
           )}
         </div>
       </div>

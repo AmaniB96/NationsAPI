@@ -20,14 +20,29 @@
   width: 100%;
 }
 
+.quiz-background {
+  height: 86.9vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 2rem;
+  color: white;
+}
+
+.quiz-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
 .quiz-container {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 500px;
-  width: 90%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   text-align: center;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .quiz-container h2 {
@@ -50,39 +65,60 @@
 }
 
 .choices {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 .choices button {
-  padding: 12px 20px;
-  font-size: 16px;
-  border: 2px solid #FFD43B;
+  padding: 1rem;
+  border: none;
   border-radius: 8px;
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .choices button:hover {
-  background-color: #FFD43B;
-  color: black;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.score {
+  font-size: 1.5rem;
+  color: #FFD43B;
+  margin-top: 1rem;
+}
+
+.quiz-over {
+  padding: 2rem;
 }
 
 .replay-btn {
-  padding: 10px 25px;
-  font-size: 16px;
-  background-color: #FFD43B;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
   border: none;
   border-radius: 8px;
+  background: #FFD43B;
   color: black;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .replay-btn:hover {
-  background-color: #e6c122;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .choices {
+    grid-template-columns: 1fr;
+  }
+  
+  .quiz-container {
+    padding: 1rem;
+  }
 }
