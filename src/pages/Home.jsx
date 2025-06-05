@@ -26,9 +26,16 @@ export default function Home() {
         setFilteredData(filtered)
     }
 
+    const triFunction = (region) => {
+        const filtered1 = data.filter(country => 
+            country.region.toLowerCase() === region.toLowerCase()
+        )
+        setFilteredData(filtered1)
+    }
+
     return(
         <>
-        <SearchBar onSearch={handleSearch}/>
+        <SearchBar onTri={triFunction} onSearch={handleSearch}/>
 
         <div className='container'>
          {filteredData && filteredData.map((item, index) => (      
