@@ -1,28 +1,27 @@
 .nav {
-    height: 70px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.nav-links li a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-}
-.nav-links li {
-      text-decoration: none;
-}
-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px;
+  padding: 10px;
   position: relative;
   background-color: bisque;
   color: white;
   border: 3px solid;
+}
+
+.nav img {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.ligne {
+  height: 2px;
+  width: 40vw;
+  background-color: black;
+  position: absolute;
+  left: 100px;
+  z-index: 1;
 }
 
 .navig {
@@ -31,23 +30,27 @@ nav {
   padding: 20px 60px;
   display: flex;
   align-items: center;
+  list-style: none;
   z-index: 2;
+  gap: 30px;
+}
+
+.navig ul {
+  list-style: none;
   list-style: none;
   display: flex;
   gap: 40px;
   margin: 0;
   padding: 0;
 }
-
+.darkmode{
+    width: 50px;
+    background-color: black;
+    border-radius: 40px;
+}
 .navig li a {
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 2px;
 }
-.dark-btn{
-    width: 70px;
-}
-.dark-btn button{
-    
-    border-radius: 100%;
-}
+

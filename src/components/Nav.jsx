@@ -1,14 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
 import './nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-  import { faUser, faCamera } from '@fortawesome/free-solid-svg-icons';  
+  import { faGlobe, faCamera,faStar } from '@fortawesome/free-solid-svg-icons';  
 export default function Nav() {
   const location = useLocation();
 
   return (
     <div className="nav">
       <div className="logo">
-        <h3>Visite your world ?</h3>
+        <h3><FontAwesomeIcon icon={faGlobe} style={{color: "#FFD43B",}} /></h3>
       </div>
       <div className="ligne"></div>
 
@@ -22,7 +22,7 @@ export default function Nav() {
       </ul>
 
       <div className="dark-btn">
-        <button className="darkmode">{faCamera}</button>
+        <button className="darkmode">  <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B",}}/></button>
       </div>
     </div>
   );
