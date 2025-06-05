@@ -1,5 +1,73 @@
+/* Style général de la nav */
 .nav {
-    height: 70px;
-    width: 100%;
-    background-color: rgba(167, 160, 160, 0.775);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  position: relative;
+  background-color: bisque;
+  color: #333;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* Logo (icône globe) */
+.logo h3 {
+  font-size: 32px;
+  margin: 0;
+}
+
+/* Ligne horizontale décorative */
+.ligne {
+  height: 2px;
+  width: 80vw;
+  background-color: black;
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Navigation */
+.navig {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+
+.navig li a {
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.navig li a:hover {
+  color: #FFD43B;
+}
+
+
+/* Bouton dark mode */
+.dark-btn {
+  margin-left: 20px;
+}
+
+.darkmode {
+  background-color: transparent;
+  border: 2px solid #FFD43B;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.darkmode:hover {
+  background-color: #FFD43B;
+  color: black;
+  
 }

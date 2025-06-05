@@ -1,18 +1,29 @@
-import './nav.css'
-
+import { Link, useLocation } from 'react-router-dom';
+import './nav.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+  import { faGlobe, faCamera,faStar } from '@fortawesome/free-solid-svg-icons';  
 export default function Nav() {
-    
-    return(
-        <div className="nav">
-            <div className="logo">
-                <h3>Where in the world ?</h3>
-            </div>
-            <div className='nav-btn'>
-                <p>Quizz</p>
-            </div>
-            <div className="dark-btn">
-                <button className="darkmode">Dark</button>
-            </div>
-        </div>
-    )
+  const location = useLocation();
+
+  return (
+    <div className="nav">
+      <div className="logo">
+        <h3><FontAwesomeIcon icon={faGlobe} style={{color: "#FFD43B",}} /></h3>
+      </div>
+      <div className="ligne"></div>
+
+      <ul className="navig">
+        <li className={location.pathname === '/' ? 'active' : ''}>
+          <Link to="/">Home</Link>
+        </li>
+        <li className={location.pathname === '/quizz' ? 'active' : ''}>
+          <Link to="/quizz">Quizz</Link>
+        </li>
+      </ul>
+
+      <div className="dark-btn">
+        <button className="darkmode">  <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B",}}/></button>
+      </div>
+    </div>
+  );
 }

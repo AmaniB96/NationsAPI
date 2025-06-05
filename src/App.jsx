@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
+import Quizz from './pages/Quizz';
 import Layout from './layout/Layout'
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home/>}/>
+          <Route path="quizz" element={<Quizz />} />
+
         </Route>
       </Routes>
   
