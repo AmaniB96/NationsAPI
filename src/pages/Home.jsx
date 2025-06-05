@@ -19,7 +19,7 @@ export default function Home() {
             
                 <div className='card-container' key={index}>
                     <div className='flag'>
-                        <img src={item.flags.png}></img>
+                        <img src={item.flags.svg}></img>
                     </div>
                     <div className='infos'>
                         <h3>{item.name.common}</h3>
