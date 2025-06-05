@@ -1,21 +1,37 @@
 import { useEffect, useState } from 'react'
 import './home.css'
 import axios from 'axios'
+import SearchBar from '../components/searchBar'
 
 export default function Home() {
     
     const [data, setData] = useState(null)
+    const [filteredData, setFilteredData] = useState(null)
 
     useEffect(() => {
         axios.get("https://restcountries.com/v3.1/all")
-        .then((response) => setData(response.data))
+        .then((response) => {setData(response.data) 
+                            setFilteredData(response.data)})
         .catch((error) => console.log(error));
     }, [])
 
+    const handleSearch = (searchTerm) => {
+        if (!searchTerm) {
+            setFilteredData(data)
+            return
+        }
+        const filtered = data.filter(country => 
+            country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        setFilteredData(filtered)
+    }
+
     return(
         <>
+        <SearchBar onSearch={handleSearch}/>
+
         <div className='container'>
-         {data && data.map((item, index) => (      
+         {filteredData && filteredData.map((item, index) => (      
             
                 <div className='card-container' key={index}>
                     <div className='flag'>
