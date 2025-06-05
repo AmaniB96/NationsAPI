@@ -40,7 +40,7 @@ export default function Home() {
 
             <div className='container'>
                 {filteredData && filteredData.map((item, index) => (      
-                    <NavLink key={index} to={`/country/${index}`}>
+                    <NavLink key={index} to={`/country/${item.name.common}`}>
                         <div className="product-card">
                             <div className='card-container'>
                                 <div className='flag'>
