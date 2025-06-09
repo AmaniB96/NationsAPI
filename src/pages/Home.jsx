@@ -10,9 +10,11 @@ export default function Home() {
     const [filteredData, setFilteredData] = useState(null)
 
     useEffect(() => {
-        axios.get("https://restcountries.com/v3.1/all")
-        .then((response) => {setData(response.data) 
-                            setFilteredData(response.data)})
+        axios.get("https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags,borders,languages,currencies,subregion,cca3")
+        .then((response) => {
+            setData(response.data) 
+            setFilteredData(response.data)
+        })
         .catch((error) => console.log(error));
     }, [])
 

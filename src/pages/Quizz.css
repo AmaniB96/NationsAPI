@@ -1,7 +1,7 @@
 .contain-qzz {
   min-height: 100vh;
   width: 100vw;
-  background-image: url("../assets/bg-quizz.png"); /* optionnel */
+  background-image: url("../assets/bg-quizz.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
@@ -21,17 +21,21 @@
 }
 
 .quiz-background {
-  height: 86.9vh;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding: 2rem;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .quiz-content {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -43,6 +47,8 @@
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   text-align: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .quiz-container h2 {
@@ -58,6 +64,7 @@
   border-radius: 10px;
   margin-bottom: 20px;
   transition: transform 0.4s ease;
+  max-width: 100%;
 }
 
 .poke-img.reveal {
@@ -80,6 +87,7 @@
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  min-height: 50px;
 }
 
 .choices button:hover {
@@ -107,18 +115,201 @@
   font-size: 1.1rem;
   cursor: pointer;
   transition: transform 0.3s ease;
+  min-height: 50px;
 }
 
 .replay-btn:hover {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+/* Tablet styles (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .contain-qzz {
+    padding: 30px 15px;
+  }
+  
+  .quiz-background {
+    padding: 1.5rem;
+  }
+  
+  .quiz-content {
+    padding: 1.5rem;
+    max-width: 700px;
+  }
+  
+  .quiz-container {
+    padding: 1.5rem;
+  }
+  
+  .quiz-container h2 {
+    font-size: 22px;
+  }
+  
+  .poke-img {
+    width: 160px;
+  }
+  
+  .choices button {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+  
+  .score {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile styles (up to 768px) */
+@media screen and (max-width: 768px) {
+  .contain-qzz {
+    padding: 20px 10px;
+  }
+  
+  .quiz-background {
+    padding: 1rem;
+    background-attachment: scroll;
+  }
+  
+  .quiz-content {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .quiz-container {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .quiz-container h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .poke-img {
+    width: 140px;
+    margin-bottom: 15px;
+  }
+  
   .choices {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+  }
+  
+  .choices button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+    min-height: 45px;
+  }
+  
+  .score {
+    font-size: 1.2rem;
+  }
+  
+  .quiz-over {
+    padding: 1.5rem;
+  }
+  
+  .replay-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile styles (up to 480px) */
+@media screen and (max-width: 480px) {
+  .contain-qzz {
+    padding: 15px 5px;
+  }
+  
+  .quiz-background {
+    padding: 0.5rem;
+  }
+  
+  .quiz-content {
+    padding: 0.5rem;
   }
   
   .quiz-container {
     padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .quiz-container h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .poke-img {
+    width: 120px;
+    margin-bottom: 12px;
+  }
+  
+  .choices {
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  
+  .choices button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    min-height: 40px;
+  }
+  
+  .score {
+    font-size: 1.1rem;
+  }
+  
+  .quiz-over {
+    padding: 1rem;
+  }
+  
+  .replay-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small mobile styles (up to 320px) */
+@media screen and (max-width: 320px) {
+  .contain-qzz {
+    padding: 10px 3px;
+  }
+  
+  .quiz-container {
+    padding: 0.8rem;
+  }
+  
+  .quiz-container h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .poke-img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .choices {
+    gap: 0.5rem;
+  }
+  
+  .choices button {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    min-height: 38px;
+  }
+  
+  .score {
+    font-size: 1rem;
+  }
+  
+  .quiz-over {
+    padding: 0.8rem;
+  }
+  
+  .replay-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
 }

@@ -9,7 +9,7 @@ export default function Details() {
     const { name } = useParams();
 
     useEffect(() => {
-        axios.get("https://restcountries.com/v3.1/all")
+        axios.get("https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags,borders,languages,currencies,subregion,cca3")
             .then((response) => {
                 const currentCountry = response.data.find(c => 
                     c.name.common.toLowerCase() === name.toLowerCase()

@@ -12,7 +12,7 @@ function Quizz() {
   const [reveal, setReveal] = useState(false);
 
   useEffect(() => {
-    axios.get('https://restcountries.com/v3.1/all')
+    axios.get("https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags,borders,languages,currencies,subregion,cca3")
       .then(res => {
         const filtered = res.data.filter(c => c.flags && c.name);
         setCountryList(filtered);
