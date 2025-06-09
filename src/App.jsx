@@ -8,7 +8,7 @@ import Details from './pages/Details';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/NationsAPI">
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home/>}/>
